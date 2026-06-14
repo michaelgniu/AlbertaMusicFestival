@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ultimate Voice Singing Competition · Past Event</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0D1B2A;--deep:#162236;--gold:#C8962F;--gold-lt:#E4B870;
+  --cream:#F7F4EE;--parchment:#EDE8DC;--charcoal:#2A3545;
+  --border:#D4CCB8;--muted:#6B7A8D;--nav-h:72px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--navy);line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(13,27,42,0.97);backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(200,150,47,0.2)}
+.nav-brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.nav-logo{width:42px;height:42px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);font-weight:900}
+.nav-brand-text .main{font-family:'Playfair Display',serif;font-size:0.95rem;color:#fff;font-weight:700;display:block;line-height:1.2}
+.nav-brand-text .sub{font-size:0.6rem;color:rgba(255,255,255,0.4);letter-spacing:0.18em;text-transform:uppercase}
+.nav-back{color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;padding:8px 16px;border:1px solid rgba(200,150,47,0.3);border-radius:2px;transition:all 0.2s}
+.nav-back:hover{color:var(--gold);border-color:var(--gold)}
+
+/* HERO */
+.hero{min-height:60vh;background:var(--navy);display:flex;align-items:flex-end;padding:0 10vw 5rem;position:relative;overflow:hidden;margin-top:var(--nav-h)}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0D1B2A 0%,#1a2d45 50%,#0D1B2A 100%);z-index:0}
+.hero-pattern{position:absolute;inset:0;z-index:1;opacity:0.04;background-image:repeating-linear-gradient(45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 50%);background-size:20px 20px}
+.hero-content{position:relative;z-index:2;max-width:700px}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.4);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;margin-bottom:2rem;transition:color 0.2s}
+.back-link:hover{color:var(--gold)}
+.eyebrow{font-size:0.67rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:900;color:#fff;line-height:1.05;margin-bottom:1.2rem}
+.hero h1 em{color:var(--gold);font-style:italic;font-weight:400}
+.hero p{font-size:1rem;color:rgba(255,255,255,0.55);max-width:520px;line-height:1.8}
+.hero-badges{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem}
+.badge{padding:0.35rem 1rem;border:1px solid rgba(200,150,47,0.35);border-radius:20px;font-size:0.72rem;color:rgba(255,255,255,0.6);letter-spacing:0.08em}
+
+/* VIDEO */
+.video-section{background:var(--deep);padding:4rem 10vw}
+.video-wrap{max-width:900px;margin:0 auto;border-radius:6px;overflow:hidden;box-shadow:0 8px 48px rgba(0,0,0,0.5);border:1px solid rgba(200,150,47,0.2)}
+.video-wrap .ratio{position:relative;padding-bottom:56.25%;height:0}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+
+/* ABOUT */
+.about-section{padding:6rem 10vw;background:var(--cream)}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;line-height:1.2;margin-bottom:1.5rem}
+.section-title em{color:var(--gold);font-style:italic;font-weight:400}
+.about-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2.5rem}
+.about-card{background:#fff;border:1px solid var(--border);border-radius:6px;padding:1.8rem;position:relative;overflow:hidden}
+.about-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}
+.about-card .ic{font-size:1.8rem;margin-bottom:0.8rem;display:block}
+.about-card h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;margin-bottom:0.5rem}
+.about-card p{font-size:0.85rem;color:var(--charcoal);line-height:1.75}
+
+/* ROUNDS */
+.rounds-section{background:var(--navy);padding:6rem 10vw}
+.rounds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+.round-card{background:var(--deep);border:1px solid rgba(200,150,47,0.15);border-radius:6px;padding:2rem 1.5rem;text-align:center}
+.round-star{font-size:1.5rem;margin-bottom:0.8rem}
+.round-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gold-lt);margin-bottom:0.5rem}
+.round-card .subtitle{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.8rem}
+.round-card p{font-size:0.83rem;color:rgba(255,255,255,0.55);line-height:1.75}
+.round-card .fee{margin-top:0.8rem;font-size:0.75rem;color:var(--gold);font-weight:500}
+
+/* AWARDS */
+.awards-section{background:var(--parchment);padding:6rem 10vw}
+.awards-groups{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:2.5rem}
+.award-group{background:#fff;border:1px solid var(--border);border-radius:6px;overflow:hidden}
+.award-group-header{background:var(--navy);padding:1rem 1.5rem;display:flex;align-items:center;gap:10px}
+.award-group-header h3{font-family:'Playfair Display',serif;font-size:1rem;color:#fff;font-weight:700}
+.award-group-header .age{font-size:0.65rem;color:rgba(255,255,255,0.4);letter-spacing:0.14em;text-transform:uppercase;margin-left:auto}
+.award-list{padding:1.2rem 1.5rem}
+.award-item{display:flex;align-items:center;gap:12px;padding:0.6rem 0;border-bottom:1px solid rgba(0,0,0,0.05)}
+.award-item:last-child{border-bottom:none}
+.award-medal{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;flex-shrink:0;font-weight:700}
+.medal-gold{background:linear-gradient(135deg,#f0c040,#c8962f);color:#fff}
+.medal-silver{background:linear-gradient(135deg,#d0d0d0,#a0a0a0);color:#fff}
+.medal-bronze{background:linear-gradient(135deg,#cd7f32,#8b4513);color:#fff}
+.medal-merit{background:var(--navy);color:var(--gold);font-size:0.65rem;letter-spacing:0.05em}
+.award-name{font-size:0.88rem;color:var(--navy);font-weight:500}
+.award-label{font-size:0.7rem;color:var(--muted);margin-left:auto;white-space:nowrap}
+
+/* SPECIAL */
+.special-section{background:var(--deep);padding:4rem 10vw;display:flex;gap:2rem;flex-wrap:wrap;justify-content:center}
+.special-card{background:var(--charcoal);border:1px solid rgba(200,150,47,0.2);border-radius:6px;padding:2rem 2.5rem;text-align:center;min-width:220px}
+.special-card .title{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem}
+.special-card .name{font-family:'Playfair Display',serif;font-size:1.4rem;color:#fff;font-weight:700}
+.special-card .award{font-size:0.8rem;color:rgba(255,255,255,0.45);margin-top:4px}
+
+/* AGE GROUPS */
+.age-section{background:var(--cream);padding:5rem 10vw}
+.age-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-top:2rem}
+.age-card{background:#fff;border:1px solid var(--border);border-radius:6px;padding:1.5rem;text-align:center}
+.age-card .emoji{font-size:1.8rem;margin-bottom:0.5rem;display:block}
+.age-card h3{font-family:'Playfair Display',serif;font-size:0.9rem;font-weight:700;margin-bottom:0.3rem}
+.age-card p{font-size:0.78rem;color:var(--muted)}
+
+/* FOOTER */
+footer{background:var(--navy);border-top:1px solid rgba(200,150,47,0.12);padding:2.5rem 10vw;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem}
+.footer-brand .name{font-family:'Playfair Display',serif;color:var(--gold);font-size:1rem;font-weight:700}
+.footer-brand .tagline{font-size:0.65rem;color:rgba(255,255,255,0.3);letter-spacing:0.14em;text-transform:uppercase;margin-top:2px}
+footer p{color:rgba(255,255,255,0.25);font-size:0.75rem}
+footer a{color:var(--gold);text-decoration:none;font-size:0.8rem}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s,transform 0.7s}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:768px){
+  .about-grid,.rounds-grid,.awards-groups{grid-template-columns:1fr}
+  .hero,.about-section,.awards-section,.rounds-section,.age-section{padding-left:6vw;padding-right:6vw}
+  .video-section{padding:3rem 6vw}
+  footer{padding:2rem 6vw;flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">
+    <div class="nav-logo">♪</div>
+    <div class="nav-brand-text">
+      <span class="main">Alberta Choral Festival</span>
+      <span class="sub">Harmony of Earth Village · 2026</span>
+    </div>
+  </a>
+  <a class="nav-back" href="index.html">← Back to Main</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <a class="back-link" href="index.html">← Back to Alberta Choral Festival</a>
+    <div class="eyebrow">Past Event · Singing Competition</div>
+    <h1>The Ultimate Voice<br><em>Singing Competition</em></h1>
+    <p>A first-class singing competition providing a stage for every voice — from children to seniors — with professional judges, world-class training, and a community of passionate music lovers.</p>
+    <div class="hero-badges">
+      <span class="badge">📍 Bella Concert Hall, MRU</span>
+      <span class="badge">🎤 All Age Groups Welcome</span>
+      <span class="badge">⭐ Professional Judging Panel</span>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<div class="video-section">
+  <div class="video-wrap">
+    <div class="ratio">
+      <iframe src="https://www.youtube.com/embed/tiI6suSu644?rel=0&showinfo=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="Ultimate Voice Singing Competition"></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="video-section">
+  <div class="video-wrap">
+    <div class="ratio">
+      <iframe 
+        src="https://youtube.com/embed/tiI6suSu644?rel=0&amp;showinfo=0&amp;si=257yY45Xlnri5en2&amp;autoplay=0&amp;loop=0&amp;muted=0&amp;controls=1" 
+        title="Ultimate Voice Singing Competition" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen 
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</div>
+<!-- ABOUT -->
+<section class="about-section">
+  <div class="eyebrow reveal">About the Event</div>
+  <h2 class="section-title reveal">Where Every Voice<br><em>Gets to Shine</em></h2>
+  <div class="about-grid reveal">
+    <div class="about-card">
+      <span class="ic">🏛️</span>
+      <h3>First-Class Venue</h3>
+      <p>Held at the MRU Conservatory — a professional concert hall setting that allows every participant to showcase their talent to its fullest.</p>
+    </div>
+    <div class="about-card">
+      <span class="ic">🎵</span>
+      <h3>Passionate Community</h3>
+      <p>Bringing together music lovers from across Calgary, creating connections and shared experiences through the universal language of song.</p>
+    </div>
+    <div class="about-card">
+      <span class="ic">👨‍⚖️</span>
+      <h3>Professional Judges</h3>
+      <p>Expert judges provide valuable, constructive advice to each participant — helping singers grow regardless of the outcome.</p>
+    </div>
+    <div class="about-card">
+      <span class="ic">🌟</span>
+      <h3>A Broader Stage</h3>
+      <p>A platform designed to help participants realize their musical dreams and build confidence through performance experience.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETITION ROUNDS -->
+<section class="rounds-section">
+  <div class="eyebrow reveal" style="color:var(--gold)">Competition Structure</div>
+  <h2 class="section-title reveal" style="color:#fff">Three <em>Rounds</em></h2>
+  <div class="rounds-grid reveal">
+    <div class="round-card">
+      <div class="round-star">⭐</div>
+      <h3>Preliminary Round</h3>
+      <div class="subtitle">Online Evaluation</div>
+      <p>Submit your audio recording online for review by our professional judging team — no travel required. Easy, accessible participation for everyone.</p>
+      <div class="fee">Free Entry</div>
+    </div>
+    <div class="round-card">
+      <div class="round-star">⭐</div>
+      <h3>Semi-Final</h3>
+      <div class="subtitle">In-Person Competition</div>
+      <p>Qualified contestants compete live at MRU Conservatory, receiving real-time feedback from professional mentors and connecting with fellow music enthusiasts.</p>
+      <div class="fee">$20 Registration Fee</div>
+    </div>
+    <div class="round-card">
+      <div class="round-star">⭐</div>
+      <h3>Final</h3>
+      <div class="subtitle">Bella Concert Hall</div>
+      <p>Finalists receive professional training in stage presence, attire, makeup, and vocal performance to shine in the finals and reach new heights of musical glory.</p>
+      <div class="fee">Comprehensive Training Included</div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARD WINNERS -->
+<section class="awards-section">
+  <div class="eyebrow reveal">Results</div>
+  <h2 class="section-title reveal">Award <em>Winners</em></h2>
+
+  <div class="awards-groups reveal">
+
+    <!-- Under 12 -->
+    <div class="award-group">
+      <div class="award-group-header">
+        <h3>Under 12 Group</h3>
+        <span class="age">Children</span>
+      </div>
+      <div class="award-list">
+        <div class="award-item"><div class="award-medal medal-gold">🥇</div><span class="award-name">Annika Jensen</span><span class="award-label">Gold</span></div>
+        <div class="award-item"><div class="award-medal medal-silver">🥈</div><span class="award-name">Kevin Shen</span><span class="award-label">Silver</span></div>
+        <div class="award-item"><div class="award-medal medal-bronze">🥉</div><span class="award-name">Lucas Wang</span><span class="award-label">Bronze</span></div>
+        <div class="award-item"><div class="award-medal medal-merit">✦</div><span class="award-name">Dale Cheng</span><span class="award-label">Merit Award</span></div>
+        <div class="award-item"><div class="award-medal medal-merit">✦</div><span class="award-name">Megan Li</span><span class="award-label">Merit Award</span></div>
+      </div>
+    </div>
+
+    <!-- Ages 13–25 -->
+    <div class="award-group">
+      <div class="award-group-header">
+        <h3>Ages 13–25 Group</h3>
+        <span class="age">Youth</span>
+      </div>
+      <div class="award-list">
+        <div class="award-item"><div class="award-medal medal-gold">🥇</div><span class="award-name">Rachel Pei</span><span class="award-label">Gold</span></div>
+        <div class="award-item"><div class="award-medal medal-silver">🥈</div><span class="award-name">Joyce Chen</span><span class="award-label">Silver</span></div>
+        <div class="award-item"><div class="award-medal medal-bronze">🥉</div><span class="award-name">Amy Cheng</span><span class="award-label">Bronze</span></div>
+        <div class="award-item"><div class="award-medal medal-merit">✦</div><span class="award-name">Melody Zhou</span><span class="award-label">Outstanding Merit</span></div>
+        <div class="award-item"><div class="award-medal medal-merit">✦</div><span class="award-name">Ashley Chen</span><span class="award-label">Outstanding Merit</span></div>
+        <div class="award-item"><div class="award-medal medal-merit">✦</div><span class="award-name">Serena Fan</span><span class="award-label">Merit Award</span></div>
+        <div class="award-item"><div class="award-medal medal-merit">✦</div><span class="award-name">Rona Kong</span><span class="award-label">Merit Award</span></div>
+      </div>
+    </div>
+
+    <!-- Ages 26–60 -->
+    <div class="award-group">
+      <div class="award-group-header">
+        <h3>Ages 26–60 Group</h3>
+        <span class="age">Adult</span>
+      </div>
+      <div class="award-list">
+        <div class="award-item"><div class="award-medal medal-gold">🥇</div><span class="award-name">Ti Huang</span><span class="award-label">Gold</span></div>
+        <div class="award-item"><div class="award-medal medal-silver">🥈</div><span class="award-name">Yining Fa</span><span class="award-label">Silver</span></div>
+        <div class="award-item"><div class="award-medal medal-bronze">🥉</div><span class="award-name">Rebecca Kao</span><span class="award-label">Bronze</span></div>
+      </div>
+    </div>
+
+    <!-- Senior Group -->
+    <div class="award-group">
+      <div class="award-group-header">
+        <h3>Senior Group</h3>
+        <span class="age">65+</span>
+      </div>
+      <div class="award-list">
+        <div class="award-item"><div class="award-medal medal-merit">✦</div><span class="award-name">Hongqi Yuan</span><span class="award-label">Merit Award</span></div>
+        <div class="award-item"><div class="award-medal medal-merit">✦</div><span class="award-name">Yu Pei</span><span class="award-label">Merit Award</span></div>
+        <div class="award-item"><div class="award-medal medal-merit">✦</div><span class="award-name">Yinshan Song</span><span class="award-label">Merit Award</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SPECIAL AWARDS -->
+<div class="special-section">
+  <div class="special-card reveal">
+    <div class="title">Special Recognition</div>
+    <div class="name">Eng Chang</div>
+    <div class="award">🏆 Most Senior Singer</div>
+  </div>
+  <div class="special-card reveal">
+    <div class="title">Special Group</div>
+    <div class="name">Alissa Gu</div>
+    <div class="award">⭐ Merit Award</div>
+  </div>
+</div>
+
+<!-- AGE GROUPS -->
+<section class="age-section">
+  <div class="eyebrow reveal">Participation</div>
+  <h2 class="section-title reveal">Open to <em>All Ages</em></h2>
+  <p class="reveal" style="max-width:560px;color:var(--charcoal);font-size:0.9rem;line-height:1.8;margin-bottom:0.5rem">A stage for everyone to shine — where children grow, youth gain confidence, adults showcase their talents, seniors embrace their legacy, and those with special needs find support and inclusion.</p>
+  <div class="age-grid reveal">
+    <div class="age-card"><span class="emoji">🧒</span><h3>Children's Group</h3><p>12 and younger</p></div>
+    <div class="age-card"><span class="emoji">🧑</span><h3>Youth Group</h3><p>Ages 13–25</p></div>
+    <div class="age-card"><span class="emoji">👨</span><h3>Adult Group</h3><p>Ages 26–64</p></div>
+    <div class="age-card"><span class="emoji">👴</span><h3>Senior Group</h3><p>65 and older</p></div>
+    <div class="age-card"><span class="emoji">💛</span><h3>Special Group</h3><p>People with disabilities — no age category</p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">
+    <div class="name">Alberta Choral Festival 2026</div>
+    <div class="tagline">Harmony of Earth Village · Calgary, Alberta</div>
+  </div>
+  <a href="index.html">← Back to Alberta Choral Festival</a>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
