@@ -181,6 +181,7 @@ footer p{color:rgba(255,255,255,0.25);font-size:0.75rem}
   <ul class="nav-links">
     <li><a href="#event">Event</a></li>
     <li><a href="#choirs">Choirs</a></li>
+    <li><a href="#past-events">Past Events</a></li>
     <li><a href="#venue">Venue</a></li>
   </ul>
   <button class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
@@ -191,6 +192,7 @@ footer p{color:rgba(255,255,255,0.25);font-size:0.75rem}
 <div class="mobile-menu" id="mobileMenu">
   <a href="#event" onclick="closeMobile()">Event</a>
   <a href="#choirs" onclick="closeMobile()">Choirs</a>
+  <a href="#past-events" onclick="closeMobile()">Past Events</a>
   <a href="#venue" onclick="closeMobile()">Venue</a>
 </div>
 
@@ -385,7 +387,65 @@ footer p{color:rgba(255,255,255,0.25);font-size:0.75rem}
   </div>
 </div>
 
-<!-- VENUE -->
+<!-- PAST EVENTS -->
+<section class="section" style="background:var(--deep)" id="past-events">
+  <div class="eyebrow reveal" style="color:var(--gold)">From Our Community</div>
+  <h2 class="section-title reveal" style="color:#fff">Past <em>Events</em></h2>
+  <p class="reveal" style="max-width:600px;color:rgba(255,255,255,0.55);font-size:0.92rem;line-height:1.8;margin-bottom:3rem">Harmony of Earth Village is proud to support and celebrate music events across Calgary. Here are some of our community's recent highlights.</p>
+
+  <!-- Ultimate Voice Card -->
+  <div class="reveal" style="max-width:900px">
+    <div style="background:var(--charcoal);border-radius:6px;overflow:hidden;border:1px solid rgba(200,150,47,0.2);display:grid;grid-template-columns:1fr 1fr;gap:0" class="past-event-card">
+
+      <!-- Video embed -->
+      <div style="position:relative;padding-bottom:56.25%;height:0;background:#000">
+        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:none" src="https://youtube.com/embed/tiI6suSu644" allowfullscreen loading="lazy" title="Ultimate Voice Singing Competition"></iframe>
+      </div>
+
+      <!-- Info -->
+      <div style="padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:space-between">
+        <div>
+          <div style="font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem">Past Event · Singing Competition</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:#fff;font-weight:700;line-height:1.2;margin-bottom:1rem">The Ultimate Voice<br>Singing Competition</h3>
+          <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.75;margin-bottom:1.2rem">A first-class singing competition held at Bella Concert Hall, MRU Conservatory — bringing together passionate music lovers across all age groups, with professional judges offering valuable feedback and a broader stage to realize musical dreams.</p>
+
+          <!-- Age groups -->
+          <div style="margin-bottom:1.2rem">
+            <div style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem">Age Groups</div>
+            <div style="display:flex;flex-wrap:wrap;gap:0.4rem">
+              <span style="font-size:0.72rem;padding:0.2rem 0.7rem;border:1px solid rgba(200,150,47,0.3);border-radius:20px;color:rgba(255,255,255,0.6)">Under 12</span>
+              <span style="font-size:0.72rem;padding:0.2rem 0.7rem;border:1px solid rgba(200,150,47,0.3);border-radius:20px;color:rgba(255,255,255,0.6)">Ages 13–25</span>
+              <span style="font-size:0.72rem;padding:0.2rem 0.7rem;border:1px solid rgba(200,150,47,0.3);border-radius:20px;color:rgba(255,255,255,0.6)">Ages 26–64</span>
+              <span style="font-size:0.72rem;padding:0.2rem 0.7rem;border:1px solid rgba(200,150,47,0.3);border-radius:20px;color:rgba(255,255,255,0.6)">Senior 65+</span>
+              <span style="font-size:0.72rem;padding:0.2rem 0.7rem;border:1px solid rgba(200,150,47,0.3);border-radius:20px;color:rgba(255,255,255,0.6)">Special Group</span>
+            </div>
+          </div>
+
+          <!-- Award highlights -->
+          <div>
+            <div style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem">Award Highlights</div>
+            <div style="font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.8">
+              🥇 <strong style="color:rgba(255,255,255,0.8)">Under 12 Gold</strong> — Annika Jensen<br>
+              🥇 <strong style="color:rgba(255,255,255,0.8)">Ages 13–25 Gold</strong> — Rachel Pei<br>
+              🥇 <strong style="color:rgba(255,255,255,0.8)">Ages 26–60 Gold</strong> — Ti Huang<br>
+              ⭐ <strong style="color:rgba(255,255,255,0.8)">Most Senior Singer</strong> — Eng Chang
+            </div>
+          </div>
+        </div>
+
+        <a href="ultimatevoice.html" target="_blank" style="margin-top:1.5rem;display:inline-flex;align-items:center;gap:6px;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(200,150,47,0.3);padding-bottom:2px;width:fit-content;transition:color 0.2s">View Full Event Page →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+@media(max-width:768px){
+  .past-event-card{grid-template-columns:1fr !important}
+}
+</style>
+
+
 <section class="map-section" id="venue">
   <div class="eyebrow reveal">Location</div>
   <h2 class="section-title reveal">Bella Concert Hall<br><em>Mount Royal University</em></h2>
