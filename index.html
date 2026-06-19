@@ -181,6 +181,7 @@ footer p{color:rgba(255,255,255,0.25);font-size:0.75rem}
   <ul class="nav-links">
     <li><a href="#event">Event</a></li>
     <li><a href="#choirs">Choirs</a></li>
+    <li><a href="#guests">Guests</a></li>
     <li><a href="#past-events">Past Events</a></li>
     <li><a href="#venue">Venue</a></li>
   </ul>
@@ -192,6 +193,7 @@ footer p{color:rgba(255,255,255,0.25);font-size:0.75rem}
 <div class="mobile-menu" id="mobileMenu">
   <a href="#event" onclick="closeMobile()">Event</a>
   <a href="#choirs" onclick="closeMobile()">Choirs</a>
+  <a href="#guests" onclick="closeMobile()">Guests</a>
   <a href="#past-events" onclick="closeMobile()">Past Events</a>
   <a href="#venue" onclick="closeMobile()">Venue</a>
 </div>
@@ -325,9 +327,10 @@ footer p{color:rgba(255,255,255,0.25);font-size:0.75rem}
     <div class="choir-card">
       <div class="choir-name">Cantares Latin Choir</div>
       <div class="choir-bio">A proud member of the Cantares Venezuelan Cultural Foundation, Cantares Latin Choir has been celebrating Latin American culture — particularly Venezuelan folklore — since June 2010. Under the direction of Juan Sosa, they have participated in every Calgary CarolFest since 2010, competed at the XV International Choral Kathaumixw in BC, and most recently earned a "Distinction" rating at the 2026 Airdrie Rotary Festival for Performing Arts. Everyone is welcome — contact conductor Juan Sosa at 587-989-6290.</div>
-      <button class="songs-toggle" onclick="toggleSongs(this)">♩ Program · 5 songs</button>
+      <button class="songs-toggle" onclick="toggleSongs(this)">♩ Program · 6 songs</button>
       <ul class="songs-list">
         <li>La Chaparrita <span style="color:var(--muted);font-size:0.78rem;margin-left:auto">Golpe Larense · 2:25</span></li>
+        <li>Margarita <span style="color:var(--muted);font-size:0.78rem;margin-left:auto">Waltz · 2:30</span></li>
         <li>Juana y José <span style="color:var(--muted);font-size:0.78rem;margin-left:auto">Merengue · 2:30</span></li>
         <li>El Alcaraván <span style="color:var(--muted);font-size:0.78rem;margin-left:auto">Pasaje · 2:30</span></li>
         <li>Bésame Mucho <span style="color:var(--muted);font-size:0.78rem;margin-left:auto">Bolero · 2:00</span></li>
@@ -386,6 +389,31 @@ footer p{color:rgba(255,255,255,0.25);font-size:0.75rem}
 
   <!-- Other participating choirs -->
   <div class="other-choirs reveal" style="display:none"></div>
+</section>
+
+<!-- SPECIAL GUESTS -->
+<section class="section" style="background:var(--parchment)" id="guests">
+  <div class="eyebrow reveal">Honoured Guests</div>
+  <h2 class="section-title reveal">Special <em>Performers</em></h2>
+  <p class="reveal" style="max-width:600px;color:var(--charcoal);font-size:0.92rem;line-height:1.8;margin-bottom:3rem">We are honoured to welcome two special guests who bring Indigenous traditions and teachings to this year's festival.</p>
+
+  <div class="choirs-grid stagger" style="grid-template-columns:repeat(auto-fill,minmax(340px,1fr))">
+
+    <!-- Jesse Pelletier -->
+    <div class="choir-card">
+      <div style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:0.5rem">Traditional Indigenous Dance</div>
+      <div class="choir-name">Jesse Pelletier</div>
+      <div class="choir-bio">Jesse Pelletier is from Siksika Nation, Treaty 7. He has been a traditional singer for many years, performing at Powwows, Round Dances, and singing at public gatherings throughout the community.</div>
+    </div>
+
+    <!-- Dion Simon -->
+    <div class="choir-card">
+      <div style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:0.5rem">Traditional Indigenous Blessing Ceremony</div>
+      <div class="choir-name">Dion Simon</div>
+      <div class="choir-bio">Dion is of the Cree Nation, Treaty 6 territory — a father, leader, and teacher who serves as Naato'ohsokay, Medicine Trail Program Coordinator. For 15 years, Dion has provided cultural support to staff and students of the Iniskim Centre and throughout the Mount Royal University campus, working continuously toward education and Indigenization at MRU. A "compassionate and humbling energy" comes from his work — the creativity he experiences as a visual artist gives him a calming, thankful outlook that deepens his appreciation for the gifts and challenges around him, and inspires his optimism about Indigenization at Mount Royal and helping students succeed.</div>
+    </div>
+
+  </div>
 </section>
 
 <!-- DIVIDER -->
