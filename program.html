@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concert Program · Alberta Choral Festival 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0D1B2A;--deep:#162236;--gold:#C8962F;--gold-lt:#E4B870;
+  --cream:#F7F4EE;--parchment:#EDE8DC;--charcoal:#2A3545;
+  --border:#D4CCB8;--muted:#6B7A8D;--nav-h:72px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--navy);line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(13,27,42,0.97);backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(200,150,47,0.2)}
+.nav-brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.nav-logo{width:42px;height:42px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);font-weight:900}
+.nav-brand-text .main{font-family:'Playfair Display',serif;font-size:0.95rem;color:#fff;font-weight:700;display:block;line-height:1.2}
+.nav-brand-text .sub{font-size:0.6rem;color:rgba(255,255,255,0.4);letter-spacing:0.18em;text-transform:uppercase}
+.nav-back{color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;padding:8px 16px;border:1px solid rgba(200,150,47,0.3);border-radius:2px;transition:all 0.2s}
+.nav-back:hover{color:var(--gold);border-color:var(--gold)}
+
+/* HERO */
+.hero{min-height:42vh;background:var(--navy);display:flex;align-items:center;justify-content:center;padding:calc(var(--nav-h) + 3rem) 10vw 3rem;position:relative;overflow:hidden;text-align:center}
+.hero-pattern{position:absolute;inset:0;z-index:0;opacity:0.04;background-image:repeating-linear-gradient(45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 50%);background-size:20px 20px}
+.hero-content{position:relative;z-index:1;max-width:700px}
+.eyebrow{font-size:0.67rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:0.8rem}
+.hero h1 em{color:var(--gold);font-style:italic;font-weight:400}
+.hero p{font-size:0.92rem;color:rgba(255,255,255,0.5);letter-spacing:0.04em}
+.hero-rule{width:60px;height:1px;background:var(--gold);margin:1.2rem auto 0}
+
+/* PROGRAM */
+.program-section{padding:5rem 10vw 6rem;background:var(--cream)}
+.program-card{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--border);border-radius:8px;box-shadow:0 12px 48px rgba(0,0,0,0.06);padding:3.5rem 3rem}
+.entry{padding:1.1rem 0;border-bottom:1px solid rgba(0,0,0,0.06)}
+.entry:last-child{border-bottom:none}
+.entry-name{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:0.5rem}
+.entry-name .title{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--navy)}
+.entry-name .subtitle{font-size:0.78rem;color:var(--muted);font-style:italic}
+.songs{margin-top:0.3rem;display:flex;flex-direction:column;gap:0.35rem}
+.song-line{display:flex;align-items:baseline;gap:8px;font-size:0.88rem;color:var(--charcoal);padding-left:0.2rem}
+.song-line .note-icon{color:var(--gold);font-size:0.8rem;flex-shrink:0}
+.song-line .song-note{color:var(--muted);font-size:0.78rem;font-style:italic;margin-left:auto;white-space:nowrap;padding-left:1rem}
+
+.intermission{text-align:center;padding:1.8rem 0;margin:0.4rem 0;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
+.intermission span{font-size:0.85rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold-dk);font-weight:700;color:#A87A1E}
+
+.program-footer{text-align:center;margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border)}
+.program-footer .meta{font-size:0.82rem;color:var(--muted);margin-bottom:1rem}
+.program-footer .closing{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold-dk);font-size:1.05rem}
+
+@media(max-width:768px){
+  .hero,.program-section{padding-left:6vw;padding-right:6vw}
+  .program-card{padding:2.2rem 1.5rem}
+  .entry-name{flex-direction:column;gap:2px}
+  .song-line{flex-wrap:wrap}
+  .song-line .song-note{margin-left:0;padding-left:1.2rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">
+    <div class="nav-logo">♪</div>
+    <div class="nav-brand-text">
+      <span class="main">Alberta Choral Festival</span>
+      <span class="sub">Harmony of Earth Village · 2026</span>
+    </div>
+  </a>
+  <a class="nav-back" href="index.html">← Back to Main</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="eyebrow">Harmony of Earth Village</div>
+    <h1>Concert <em>Program</em></h1>
+    <p>Sunday, June 21, 2026 · 7:00 PM · Bella Concert Hall</p>
+    <div class="hero-rule"></div>
+  </div>
+</section>
+
+<!-- PROGRAM -->
+<section class="program-section">
+  <div class="program-card">
+
+    <div class="entry">
+      <div class="entry-name">
+        <span class="title">Dion Simon</span>
+        <span class="subtitle">Traditional Indigenous Blessing Ceremony</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-name">
+        <span class="title">Jesse Pelletier</span>
+        <span class="subtitle">Traditional Indigenous Dance</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-name">
+        <span class="title">Joyful Notes Children's Choir</span>
+        <span class="subtitle">天赐之音少儿合唱团</span>
+      </div>
+      <div class="songs">
+        <div class="song-line"><span class="note-icon">♪</span><span>Solfege Symphony</span></div>
+        <div class="song-line"><span class="note-icon">♪</span><span>Heartbeat Rhythm</span></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-name">
+        <span class="title">Red Maple Choir</span>
+        <span class="subtitle">红枫合唱团</span>
+      </div>
+      <div class="songs">
+        <div class="song-line"><span class="note-icon">♪</span><span>我有一个装满星星的口袋</span></div>
+        <div class="song-line"><span class="note-icon">♪</span><span>锦瑟</span></div>
+        <div class="song-line"><span class="note-icon">♪</span><span>Happy Together</span></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-name">
+        <span class="title">Zhiyin Men's Choir</span>
+        <span class="subtitle">知音男子合唱团</span>
+      </div>
+      <div class="songs">
+        <div class="song-line"><span class="note-icon">♪</span><span>同桌的你</span><span class="song-note">My Old Deskmate</span></div>
+        <div class="song-line"><span class="note-icon">♪</span><span>莫尼山</span><span class="song-note">Mount Moni</span></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-name">
+        <span class="title">Calgary Music Makers</span>
+      </div>
+      <div class="songs">
+        <div class="song-line"><span class="note-icon">♪</span><span>My Favorite Things</span></div>
+        <div class="song-line"><span class="note-icon">♪</span><span>Skyfall</span></div>
+        <div class="song-line"><span class="note-icon">♪</span><span>Fix You</span></div>
+        <div class="song-line"><span class="note-icon">♪</span><span>Something to Sing About</span></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-name">
+        <span class="title">Calgary Lady Singers</span>
+        <span class="subtitle">卡尔加里女子合唱团</span>
+      </div>
+      <div class="songs">
+        <div class="song-line"><span class="note-icon">♪</span><span>萱草花</span><span class="song-note">Daylily</span></div>
+        <div class="song-line"><span class="note-icon">♪</span><span>Amani</span></div>
+        <div class="song-line"><span class="note-icon">♪</span><span>立春</span><span class="song-note">Beginning of Spring · with dance by Brilliance Dance Academy</span></div>
+      </div>
+    </div>
+
+    <div class="intermission"><span>Intermission</span></div>
+
+    <div class="entry">
+      <div class="entry-name">
+        <span class="title">Calgary Korean Canadian Choir</span>
+      </div>
+      <div class="songs">
+        <div class="song-line"><span class="note-icon">♪</span><span>Song of the Birds</span></div>
+        <div class="song-line"><span class="note-icon">♪</span><span>Spring in My Hometown</span></div>
+        <div class="song-line"><span class="note-icon">♪</span><span>Go Classic</span></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-name">
+        <span class="title">Cantares Latin Choir</span>
+      </div>
+      <div class="songs">
+        <div class="song-line"><span class="note-icon">♪</span><span>La Chaparrita</span><span class="song-note">Golpe Larense</span></div>
+        <div class="song-line"><span class="note-icon">♪</span><span>Juana y José</span><span class="song-note">Merengue</span></div>
+        <div class="song-line"><span class="note-icon">♪</span><span>El Alcaraván</span><span class="song-note">Pasaje</span></div>
+        <div class="song-line"><span class="note-icon">♪</span><span>Bésame Mucho</span><span class="song-note">Bolero</span></div>
+        <div class="song-line"><span class="note-icon">♪</span><span>Quitapesares</span><span class="song-note">Joropo</span></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-name">
+        <span class="title">Heebee-jeebees</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-name">
+        <span class="title">Zhiyin Choir</span>
+        <span class="subtitle">知音合唱团</span>
+      </div>
+      <div class="songs">
+        <div class="song-line"><span class="note-icon">♪</span><span>敕勒歌</span><span class="song-note">Chi Le Ge · Song of the Nomads</span></div>
+        <div class="song-line"><span class="note-icon">♪</span><span>城南送别</span><span class="song-note">Farewell</span></div>
+        <div class="song-line"><span class="note-icon">♪</span><span>人世间</span><span class="song-note">A Life Journey</span></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-name">
+        <span class="title">Heebee-jeebees</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-name">
+        <span class="title">Mount Royal Kantorei</span>
+      </div>
+      <div class="songs">
+        <div class="song-line"><span class="note-icon">♪</span><span>Dies Irae</span><span class="song-note">Mozart</span></div>
+        <div class="song-line"><span class="note-icon">♪</span><span>May It Be</span><span class="song-note">Enya</span></div>
+        <div class="song-line"><span class="note-icon">♪</span><span>Sogno di Volare</span><span class="song-note">Tin</span></div>
+        <div class="song-line"><span class="note-icon">♪</span><span>Joyful Joyful We Adore Thee</span><span class="song-note">Beethoven, arr. M. Warren</span></div>
+      </div>
+    </div>
+
+    <div class="program-footer">
+      <div class="meta">Harmony of Earth Village · Alberta Choral Festival 2026</div>
+      <div class="closing">感谢岁月 · 请你做我的知音</div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
